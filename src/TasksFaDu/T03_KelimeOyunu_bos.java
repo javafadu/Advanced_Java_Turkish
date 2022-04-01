@@ -4,7 +4,7 @@ package TasksFaDu;
 import java.util.Scanner;
 
 
-public class T03_KelimeOyunu {
+public class T03_KelimeOyunu_bos {
     static Scanner sc = new Scanner(System.in);
     static int oyuncu = 1;
     //static int oyuncu2=2;
