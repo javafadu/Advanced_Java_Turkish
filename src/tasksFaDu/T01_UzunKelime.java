@@ -10,26 +10,27 @@ public class T01_UzunKelime {
          * Trick: Aynı uzunlukta iki veya daha fazla kelime varsa, String'deki en uzun ilk sözcüğü return edilsin
          * Noktalama işaretlerini dikkate almayın ve cumlenin boş olmayacağını varsayın.
          */
+
         // kullanicidan cumleyi alalim
-
-
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner (System.in);
         System.out.print("Please enter a sentence including a few words : ");
-        String[] wordsArr = scan.nextLine().split(" ");
+        String wordsArr[] = scan.nextLine().split(" ");
 
-        System.out.println("The longest word is: " + findLongestWord(wordsArr));
+        System.out.println("The longest word is: "+findLongestWord(wordsArr));
+
+
 
 
     }
 
     private static String findLongestWord(String[] wordsArr) {
         String longestWord = "";
-        int maxLetterNumbers = 0;
+        int maxLetterNumbers=0;
 
-        for (int i = 0; i < wordsArr.length; i++) {
-            if (wordsArr[i].length() > maxLetterNumbers) {
-                maxLetterNumbers = wordsArr[i].length();
-                longestWord = wordsArr[i];
+        for (int i = 0; i < wordsArr.length ; i++) {
+            if(wordsArr[i].length()>maxLetterNumbers) {
+                maxLetterNumbers=wordsArr[i].length();
+                longestWord=wordsArr[i];
             }
         }
 
