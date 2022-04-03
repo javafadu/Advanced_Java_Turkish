@@ -6,9 +6,7 @@ public class Q01 {
         // input : "m", "e", "r", "v", "e";
         // output : merve
 
+
     }
-
-
-
 }
 

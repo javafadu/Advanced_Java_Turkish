@@ -1,5 +1,10 @@
 package _11_dateTimeFaDu;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
+
 public class Q02 {
 
     public static void main(String[] args) {
@@ -13,7 +18,15 @@ public class Q02 {
            D. LocalDate.of(2014, 6, 21);
            F. LocalDate.of(2014, Month.JUNE, 21);
          */
+        LocalDate date = LocalDate.of(2014,06,21);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, YYYY");
+        System.out.println(formatter.format(date));
 
+        LocalDate trh1 = LocalDate.of(2014, 6, 21);
+        System.out.println(trh1);
+
+        LocalDate trh2 = LocalDate.of(2014, Month.JUNE, 21);
+        System.out.println(trh2);
 
     }
 }

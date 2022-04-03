@@ -26,9 +26,9 @@ public class T04_SayiTahminKredili {
         int max = 101; // dahil degil
         int computerNum = (int) (Math.random() * (max - min)) + min;
 
-        System.out.println("********* WELLCOME to FIND THE NUMBER GAME ***********");
+        System.out.println("********* WELLCOME to GUESS THE NUMBER GAME ***********");
         System.out.print("Guess the number which is selected by computer (1-100)");
-        System.out.println("Your maximum number of guesses is 10.");
+        System.out.println("\nYour maximum number of guesses is 10.");
 
         guessNum(computerNum);
 
@@ -49,7 +49,7 @@ public class T04_SayiTahminKredili {
             guessNum(computerNum);
         } else {
 
-            while (count <= 10) {
+            while (count < 10) {
                 if(userNum==computerNum) {
                     score=100/count;
                     totalScore+=score;
@@ -68,6 +68,8 @@ public class T04_SayiTahminKredili {
                     userNum=scan.nextInt();
                 }
             }
+            score=0;
+            loss(score,count);
 
 
 
@@ -75,11 +77,22 @@ public class T04_SayiTahminKredili {
 
     }
 
+    private static void loss(double score, int count) {
+        System.out.println("YOU LOST THE TAME on your "+count+" .try");
+        System.out.println("Your score in this turn : "+score);
+        System.out.println("Your total score in this game : "+totalScore);
+        score = 0;
+        count=0;
+
+        gameStatus();
+    }
+
     private static void win(double score, int count) {
         System.out.println("CONGRATULATIONS YOU WIN THE GAME on your "+count+" .try");
         System.out.println("Your score in this turn : "+score);
         System.out.println("Your total score in this game : "+totalScore);
         score = 0;
+        count=0;
 
         gameStatus();
 
@@ -110,6 +123,7 @@ public class T04_SayiTahminKredili {
         System.out.println("YOUR TOTAL SCORE : "+totalScore);
         System.out.println("THANKS FOR THE GAME");
         System.out.println("-------------------");
+
 
     }
 }

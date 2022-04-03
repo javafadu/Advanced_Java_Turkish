@@ -20,7 +20,6 @@ public class T01_UzunKelime {
 
 
 
-
     }
 
     private static String findLongestWord(String[] wordsArr) {

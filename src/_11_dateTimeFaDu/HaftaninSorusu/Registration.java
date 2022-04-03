@@ -36,19 +36,44 @@ public class Registration {
     static List<String> happylist = new ArrayList<>();
 
     public static void main(String[] args) {
+        // kac tane veri alacagimizi kullanicidan isteyelim ona gore
+        // dongu sayisini hesaplayabilelim
+
         System.out.print("how many users will you add? :");
         int count = scan.nextInt();
+        scan.nextLine();
 
         register (usersList,usersRegDate,count);
+        // kullanicidan aldigimiz sayi kadar isim ve kayit tarih saat listelerine ekletelim
+
+        printHappyUser();
+        // listelere eklenenlerden kayıt tarih saati ilk 10 saniye olanlari bulup yazdiralim
 
     }
 
+
+    // burada kayıt olurken herhangi bir dakikanin ilk 10 saniyesinde kayit olanlari
+    // secip yazdiralim
+    private static void printHappyUser() {
+
+        for (int i = 0; i < usersRegDate.size(); i++) {
+            if(usersRegDate.get(i).getSecond()<=10) {
+                happylist.add(usersList.get(i));
+            }
+
+        }
+        System.out.println(happylist);
+
+    }
+
+
+    // burada kullanici isimlerini ve kayit tarihlerini alip / hesaplatip kaydedelim
     private static void register(List<String> usersList, List<LocalDateTime> usersRegDate, int count) {
         int i = 0;
         while (i < count) {
             System.out.print("Enter "+(i+1)+" . username : ");
             User obj=new User();
-            obj.name=scan.next();
+            obj.name=scan.nextLine();
             obj.registerDateTime = LocalDateTime.now();
             usersList.add(obj.name);
             usersRegDate.add(obj.registerDateTime);
