@@ -64,12 +64,9 @@ public class getTotal {
 
 
 
-
-
-
-        int i1=Integer.parseInt(num1.replaceAll("[$A-Za-z]", ""));
-        int i2=Integer.parseInt(num2.replaceAll("[$A-Za-z]", ""));
-        int i3=Integer.parseInt(num3.replaceAll("[$A-Za-z]", ""));
+        int i1=Integer.parseInt(num1.replaceAll("[%€$A-Za-z]", ""));
+        int i2=Integer.parseInt(num2.replaceAll("[%€$A-Za-z]", ""));
+        int i3=Integer.parseInt(num3.replaceAll("[%€$A-Za-z]", ""));
         int total=i1+i2+i3;
 
         if(total>=0) {
@@ -77,7 +74,7 @@ public class getTotal {
         }
 
 
-else{
+        else{
            System.out.println(-1);
        }
 
