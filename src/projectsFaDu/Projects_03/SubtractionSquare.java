@@ -1,6 +1,4 @@
-package projects.Projects_03;
-
-import java.util.Scanner;
+package projectsFaDu.Projects_03;
 
 public class SubtractionSquare {
 

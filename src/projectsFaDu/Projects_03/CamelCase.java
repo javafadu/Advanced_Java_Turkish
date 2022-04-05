@@ -1,4 +1,4 @@
-package projects.Projects_03;
+package projectsFaDu.Projects_03;
 
 public class CamelCase {
 

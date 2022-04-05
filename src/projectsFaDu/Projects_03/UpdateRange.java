@@ -1,6 +1,4 @@
-package projects.Projects_03;
-
-import java.util.Arrays;
+package projectsFaDu.Projects_03;
 
 public class UpdateRange {
 
