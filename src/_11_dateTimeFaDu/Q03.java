@@ -21,7 +21,7 @@ public class Q03 {
             C. 2018 MAY 10
             D. Another date.
             E. The code does not compile.
-            F. A runtime exception is thrown.
+            F. A runtime exception is thrown.  **CEVAP** : Leap year olmadigi icin RTE verir
             */
 
     }

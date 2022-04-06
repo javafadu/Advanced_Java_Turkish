@@ -17,7 +17,7 @@ public class Q01 {
 		 * 
 		 * C) 5/4/14T00:00:00:000
 		 * 
-		 * D) An exception is throw at runtime
+		 * D) An exception is throw at runtime  *CEVAP* time olmadigi icin error verir RTE
 		 */
 	}
 }
