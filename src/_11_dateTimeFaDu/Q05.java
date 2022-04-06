@@ -18,6 +18,10 @@ public class Q05 {
 
         Period p = Period.ofDays(1).ofYears(2);
 
+        // Peridod fonksiyonunda her zaman esitligin en sagindaki yani en son islem
+        // esas alinir dolayisi ile 2 yili al ve asagidaki atama ile d degerinin
+        // sadece yilindan 2 azalt
+
         d = d.minus(p);
 
         DateTimeFormatter f = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT);
@@ -26,7 +30,7 @@ public class Q05 {
 
  /*
             A. 5/9/13 11:22
-            B. 5/10/13 11:22
+            B. 5/10/13 11:22  *** CEVAP **** bu olur
             C. 5/9/14
             D. 5/10/14
             E. The code does not compile.
