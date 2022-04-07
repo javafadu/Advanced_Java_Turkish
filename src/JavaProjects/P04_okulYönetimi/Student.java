@@ -2,9 +2,9 @@ package JavaProjects.P04_OkulYönetimi;
 
 public class Student {
 
-    Course mat;
-    Course tur;
-    Course bio;
+    JavaProjects.P04_OkulYönetimi.Course mat;
+    JavaProjects.P04_OkulYönetimi.Course tur;
+    JavaProjects.P04_OkulYönetimi.Course bio;
     double cAvarage;
     String name;
     String stuNo;
