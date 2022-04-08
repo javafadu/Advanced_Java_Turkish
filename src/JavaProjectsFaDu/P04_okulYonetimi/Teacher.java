@@ -13,4 +13,37 @@ public class Teacher {
         this.branch = branch;
         this.mpno = mpno;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBranch() {
+        return branch;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    public int getMpno() {
+        return mpno;
+    }
+
+    public void setMpno(int mpno) {
+        this.mpno = mpno;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "name='" + name + '\'' +
+                ", branch='" + branch + '\'' +
+                ", mpno=" + mpno +
+                '}';
+    }
 }
