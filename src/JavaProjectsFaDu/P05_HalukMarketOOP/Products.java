@@ -2,18 +2,28 @@ package JavaProjectsFaDu.P05_HalukMarketOOP;
 
 public class Products {
 
-    String name;
     String code;
+    String name;
     double price;
-    int count;
+    double userKg;
 
     public Products () {
 
     }
 
-    public Products(String name, String code, double price) {
-        this.name = name;
+    public Products(String code, String name,  double price, double userKg) {
         this.code = code;
+        this.name = name;
         this.price = price;
+        this.userKg=userKg;
+    }
+
+    @Override
+    public String toString() {
+        return "Products{" +
+                "code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                '}';
     }
 }

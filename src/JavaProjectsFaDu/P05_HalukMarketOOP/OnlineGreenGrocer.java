@@ -7,10 +7,7 @@ public class OnlineGreenGrocer {
 
         System.out.println("******* WELCOME TO ONLINE GREENGROCER *******");
 
-        Products prd1 = new Products("Apple","05",1.20);
-
-
-
+        Transactions.menu();
 
     }
 }
