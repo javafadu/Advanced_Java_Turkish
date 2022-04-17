@@ -151,20 +151,27 @@ public class Transactions {
     private static void removeProducts() {
         System.out.print("Silmek istediginiz urunun kodunu yaziniz : ");
         String codeRem=scan.next();
+        int kontrol=0;
+
 
         for (int i = 0; i < products.size(); i++) {
-            if(products.get(i).code.equals(codeRem)) {
+
+            if(!products.get(i).code.equals(codeRem)) {
+
+
+            } else {
+
                 System.out.println("Urun Ismi : "+products.get(i).name+"\t\t Urun Fiyati : "+products.get(i).price);
                 System.out.print("Silmek icin d tusuna basip enter a basiniz : ");
                 String keyDel=scan.next();
-                    if(keyDel.equalsIgnoreCase("D")) {
-                        products.remove(i);
+                if(keyDel.equalsIgnoreCase("D")) {
+                    products.remove(i);
                 }
+                kontrol =1;
                 break;
-
-            } else {
-                System.out.println("Yazdiginiz kodlu urun bulunamadi.");
             }
+        } if(kontrol==0) {
+            System.out.println("Aradiginiz urun listede bulunamadi");
         }
         listProducts();
     }
@@ -265,8 +272,10 @@ public class Transactions {
         } else {
             System.out.println("Lutfen 1 veya 2 den birini yaziniz");
             seeCart();
+
         }
     }
+
 
     // MUSTERI ALISVERIS CASE 3: ODEME SAYFASI **********************************
     private static void checkOut() {

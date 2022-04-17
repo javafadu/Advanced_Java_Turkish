@@ -10,11 +10,11 @@ public class Products {
     double userKg;  // musterinin sectigi kg
 
     // 2 - Constructor lar (1 tane default)
-    public Products() {
+    public Products() { // parametresiz const
 
     }
 
-    public Products(String code, String name, double price, double userKg) {
+    public Products(String code, String name, double price, double userKg) { // parametreli const
         this.code = code;
         this.name = name;
         this.price = price;
@@ -55,6 +55,7 @@ public class Products {
     public void setUserKg(double userKg) {
         this.userKg = userKg;
     }
+
 
     // 4- toString()
 
