@@ -11,9 +11,9 @@ public class Kisi {
   }
 
     public Kisi(String adSoyad, String kimlikNo, int yas) {
-        setAdSoyad(adSoyad);
+        this.adSoyad=adSoyad;
         this.kimlikNo = kimlikNo;
-        setYas(yas);
+        this.yas=yas;
     }
 
 

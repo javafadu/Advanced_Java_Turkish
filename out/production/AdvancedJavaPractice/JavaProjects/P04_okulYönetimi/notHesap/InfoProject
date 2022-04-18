@@ -7,13 +7,8 @@ Methods : Course() , addTeacher() , printTeacher()--> kurs(), öğretmenEkle(), 
 
 ----------Teacher Class Özellikleri :
 
-<<<<<<<< HEAD:src/JavaProjectsFaDu/P04_okulYonetimi/InfoProject
-fields : name,mpno,branch
-Methods : Teacher()
-========
 fields : name,branch--> ad, branş
 Methods : Teacher()-->öğretmen()
->>>>>>>> halukhoca/main:out/production/AdvancedJavaPractice/JavaProjects/P04_okulYönetimi/notHesap/InfoProject
 
 ----------Student Class Özellikleri :
 

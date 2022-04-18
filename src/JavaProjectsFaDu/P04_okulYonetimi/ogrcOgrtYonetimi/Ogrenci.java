@@ -12,6 +12,10 @@ public class Ogrenci extends Kisi {
 
     }
 
+    public Ogrenci(String numara, String sinif) {
+        this.numara = numara;
+        this.sinif = sinif;
+    }
 
     public Ogrenci(String adSoyad, String kimlikNo, int yas, String numara, String sinif) {
         super(adSoyad, kimlikNo, yas);
