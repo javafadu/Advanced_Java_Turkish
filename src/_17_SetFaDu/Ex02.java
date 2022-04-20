@@ -23,53 +23,47 @@ public class Ex02 {
 
 
     public static void main(String[] args) {
-        int min = 0; // dahil
-        int max = 21; // dahil degil
-        int randomSayi = (int) (Math.random() * (max - min)) + min;
-
         ArrayList<Integer> arrList1 = new ArrayList<>();
         ArrayList<Integer> arrList2 = new ArrayList<>();
 
-        arrList1=arrListHazira(10,5,20);
-        arrList2=arrListHazira(5,0,20);
+        arrList1 = arrListHazırla(10, 0, 20);
+        arrList2 = arrListHazırla(5, 0, 20);
+        System.out.println("10 elemanlı list : " + arrList1);
+        System.out.println("5 elemanlı list " + arrList2);
 
-        System.out.println("List1: "+arrList1);
-        System.out.println("List2: "+arrList2);
+        //  arrList1.retainAll(arrList2);
+        //  System.out.println("ortak elemanlı list  : "+arrList1);
+        // arrList1.removeAll(arrList2);//list1 den list2 çıkarılarak list1 de olup list2 de olmayan yani farklı
+        //                             // elemanlaın oldg list create edildi
+        // System.out.println(arrList1);
+        // arrList2.removeAll(arrList1);//list2 den list1 çıkarılarak list2 de olup list1 de olmayan yani farklı
+        //                              // elemanlaın oldg list create edildi
+        // System.out.println(arrList2);
 
 
-        ArrayList<Integer> arrayListFark1 = new ArrayList<>(); // list1 de olup list2 de olmayan (list1-list2)
-        ArrayList<Integer> arrayListFark2 = new ArrayList<>(); // list2 de olup list1 de olmayan (list2-list1)
+        ArrayList<Integer> arayListFark1 = new ArrayList<>(arrList1);//list1 de olup list2 de olmayanlat ->list1-list2
+        ArrayList<Integer> arayListFark2 = new ArrayList<>(arrList2);//list2 de olup list1 de olmayanlat ->list2-list1
 
+        arayListFark1.removeAll(arrList2);
+        System.out.println("farklı list1 :" + arayListFark1);
+        arayListFark2.removeAll(arrList1);
+        System.out.println("farklı list2 :" + arayListFark2);
 
-
-        arrayListFark1=arrList1;
-        arrayListFark1.removeAll(arrList2);
-        System.out.println("ArrayList1 Fark: "+arrayListFark1 );
-
-        arrayListFark2=arrList2;
-        arrayListFark2.removeAll(arrList1);
-        System.out.println("ArrayList2 Fark: "+arrayListFark2 );
-
-        arrayListFark2.addAll(arrayListFark1); // fark listeleri eklendi
-        Collections.sort(arrayListFark2); // k->b
-        Collections.reverse(arrayListFark2); // b->k
-
+        arayListFark2.addAll(arayListFark1);//fark list'leri ekledi
+        Collections.sort(arayListFark2);//k->b
+        Collections.reverse(arayListFark2);// b->k
 
     }
 
-    public static int getRandom(int min, int max) { // max min arasinda random sayi return eder
+    public static int getRandomInt(int min, int max) {//bu method max ile min arası sayi return eder
 
-        return (int) (Math.random()*(max-min+1));
+        return (int) (Math.random() * (max - min + 1));
     }
 
-
-    private static ArrayList<Integer> arrListHazira(int size, int min, int max) {
-        // bu method create edilecek arrList size kadar min max arasinda int sayi uretip
-        // liste atar
-
-        ArrayList<Integer> bosList = new ArrayList<>();
+    private static ArrayList<Integer> arrListHazırla(int size, int min, int max) {//bu method create edilecek arrlist size kadar min ile max arsında int sayı cerate eder
+        ArrayList<Integer> bosList = new ArrayList<Integer>();
         for (int i = 0; i < size; i++) {
-            bosList.add(getRandom(min,max));
+            bosList.add(getRandomInt(min, max));
         }
         return bosList;
     }
