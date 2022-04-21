@@ -70,7 +70,6 @@ public class Ex03 {
 
 
 
-
     // arrList1 deki dublike eden elemanlari silme methodu
     private static ArrayList<Integer> arrList1RemDub(ArrayList<Integer> arrList1) {
         ArrayList<Integer> temp = new ArrayList<>();
