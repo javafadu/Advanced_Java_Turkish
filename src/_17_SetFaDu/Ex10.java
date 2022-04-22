@@ -1,8 +1,6 @@
 package _17_SetFaDu;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Ex10 {
 
@@ -11,40 +9,37 @@ public class Ex10 {
 		// Soru: Verilen bir arraydeki tekrarli elemanlari silip, sadece unique degerlerden 
 		// olusan bir liste haline getiren bir program yaziniz. 
 		
-		int arr[]= {1,2,3,4,4,5,7,3,4};
+		int arr[]= {1,2,9,7,10,3,4,4,5,7,3,4,7,8,9,5,7,10,6,9,3,6};
+		List<Integer> tekrarsizList = new ArrayList<>();
+		Set<Integer> tekrarsizSet = new HashSet<>();
 		
-		int tekrarsizArray[]=tekrarlariSil(arr);
-		
-		System.out.println(Arrays.toString(tekrarsizArray));
+		tekrarsizList=remDubMethod1(arr);
+		System.out.println("Method1 List ile: "+tekrarsizList);
+
+		tekrarsizSet=remDubMethod2(arr);
+		System.out.println("Method2 Set ile : "+tekrarsizSet);
 
 	}
 
-	       private static int[] tekrarlariSil(int[] arr) {
-	    	   
-	    	   Set<Integer> set1= new HashSet<>();
-	    	   
-	    	   for (Integer each : arr) {
-	    		   
-	    		   set1.add(each);
-	    		   
-	    		   
-	    	   }
-	    	   System.out.println(set1);
-	    		   
-	    		   int tekrarsizArray []= new int[set1.size()];
-	    		   
-	    		   int index=0;
-	    		   
-	    		   for (Integer each : set1) {
-	    			   
-	    			   tekrarsizArray[index]=each;
-	    			   index++;
+	private static Set<Integer> remDubMethod2(int[] arr) {
+		Set<Integer> temp = new HashSet<>();
+		for (Integer each:arr
+			 ) {
+			temp.add(each);
+		}
+		return temp;
+	}
+
+	// method1 : normal liste ve foreach ile
+	private static List<Integer> remDubMethod1(int[] arr) {
+		List<Integer> temp = new ArrayList<>();
+		for (Integer each:arr
+			 ) {
+			if(!temp.contains(each)) {
+				temp.add(each);
 			}
-	    		   
-	    		  return tekrarsizArray;
-		
-		
-		
+		}
+		return temp;
 	}
 
 }

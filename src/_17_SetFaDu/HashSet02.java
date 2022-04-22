@@ -1,6 +1,8 @@
 package _17_SetFaDu;
 
 
+import java.util.ArrayList;
+
 public class HashSet02 {
     public static void main(String[] args) {
 /*
@@ -12,6 +14,18 @@ public class HashSet02 {
      HashSet, TreeSet ve linkedHashSet leri doldurun.
  */
 
+        String str[] = {"reha", "hakan", "haluk", "ipek", "ahsen"};
+        ArrayList<String> strList = new ArrayList<>();
+        strList=arrToStrMethod(str);
 
+    }
+
+    // Array i Liste cevirip return eden method
+    private static ArrayList<String> arrToStrMethod(String[] str) {
+        ArrayList<String> temp = new ArrayList<>();
+        for (String each:str
+             ) {
+            temp.add(each);
+        }return temp;
     }
 }
