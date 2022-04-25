@@ -10,7 +10,7 @@ import static JavaProjectsFaDu.P11_depoYonetimi.Transactions.scan;
 public class ExceptionManagement {
 
 
-    // 2-1 : PRODUCT MANAGEMENT - how many products will you enter?
+    // 1 Add New Product - how many products will you enter?
 
     public static int pNumbers() {
 
@@ -40,8 +40,7 @@ public class ExceptionManagement {
     }
 
 
-    // 2-2 : which product and how many of them
-    // 2-2-a (select product code check)
+    //2- Product Code Check
     public static int selectProductCode() {
         int tempNum = 0;
 
@@ -70,7 +69,7 @@ public class ExceptionManagement {
         return tempNum;
     }
 
-    // 2-2-b (how many product check)
+    // 2 Quantity Control
     public static int addQuantityProduct() {
         int tempNum = 0;
 
@@ -98,7 +97,7 @@ public class ExceptionManagement {
     }
 
 
-    // 4 - Shelf Planning quantity should ve more than 0
+    // 5 - Shelf Planning quantity control - should be more than 0
     public static int quantityControl(int productId) {
         int tempQuantity = 0;
 
@@ -109,7 +108,7 @@ public class ExceptionManagement {
 
 
 
-    // 4b Shelf Planning (if enter the product code with 0 quantity  )
+    // 5 Shelf Planning (if enter the product code with 0 quantity  )
     public static int afterSelectionZeroQuantity() {
         int tempNum = 0;
 
