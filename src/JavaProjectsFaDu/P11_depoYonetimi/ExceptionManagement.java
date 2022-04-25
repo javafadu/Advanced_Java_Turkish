@@ -107,13 +107,15 @@ public class ExceptionManagement {
 
     }
 
+
+
     // 4b Shelf Planning (if enter the product code with 0 quantity  )
     public static int afterSelectionZeroQuantity() {
         int tempNum = 0;
 
         while (true) {
             try {
-                System.out.println("1: assign a shelf for another product\n2: Return main menu");
+                System.out.print("1: assign for another product\t2: Return main menu : ");
                 tempNum = Integer.valueOf(scan.next());
 
                 if (tempNum < 0 || tempNum > 2) {
@@ -135,5 +137,32 @@ public class ExceptionManagement {
         return tempNum;
     }
 
+    // Selection method
+    public static int selectionMethodControl() {
+        int tempNum = 0;
+
+        while (true) {
+            try {
+                System.out.println("1: Main menu\t2: Quit System");
+                tempNum = Integer.valueOf(scan.next());
+
+                if (tempNum < 0 || tempNum > 2) {
+                    throw new ArithmeticException();
+                } else {
+                    break;
+                }
+
+            } catch (ArithmeticException e) {
+                System.out.println("WARNING ! : Please enter 1 to go main menu " +
+                        "\n enter 2 to quit");
+
+            } catch (Exception e) {
+                System.out.println("WARNING ! Please enter a valid number");
+
+            }
+        }
+
+        return tempNum;
+    }
 
 }

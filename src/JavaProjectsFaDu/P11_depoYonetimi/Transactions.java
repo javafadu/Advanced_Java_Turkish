@@ -14,48 +14,57 @@ public class Transactions {
     static Map<Integer, Product> addedProductsMap = new HashMap<>();
 
 
-    // 1 - SYSTEM MENU PAGE
+    // WAREHOUSE MANAGEMENT SYSTEM MENU PAGE
     public static void warManSystemMenu() {
 
         System.out.println("*****  WAREHOUSE MANAGEMENT SYSTEM ****** ");
         System.out.println("-------------------------");
-        System.out.println("1 - Product Management\t\t3 - List Products");
-        System.out.println("2 - Shelf Planning \t\t\t4 - Deliver Products");
-        System.out.println("5 - Quit");
-        System.out.print("Chose your selection : ");
-        selection = scan.next();
+        System.out.println("1 - Add New Product\t\t4 - List Products");
+        System.out.println("2 - Update Products\t\t5 - Shelf Planning");
+        System.out.println("3 - Remove a Product \t6 - Deliver Products");
+        System.out.println("                        Q - Quit");
+        System.out.print("Chose your selection -> : ");
+        selection = scan.next().toUpperCase();
 
         switch (selection) {
 
             case "1":
-                productManagement();
+                addNewProduct();
                 break;
 
             case "2":
-                shelfPlanning();
+                updateProduct();
                 break;
 
             case "3":
-                listProducts();
+                removeProduct();
                 break;
 
             case "4":
-                deliverProducts();
+                listProducts();
                 break;
 
             case "5":
+                shelfPlanning();
+                break;
+
+            case "6":
+                deliverProducts();
+                break;
+
+            case "Q":
                 exitSystem();
                 break;
 
             default:
-                System.out.println("Please enter a valid menu number");
+                System.out.println("Please select only from list");
                 warManSystemMenu();
 
         }
 
     }
 
-    // 4- Deliver Products
+    // 6- Deliver Products
     private static void deliverProducts() {
         System.out.println("*****  DELIVER PRODUCT PAGE ****** ");
         System.out.println("-------------------------");
@@ -79,15 +88,15 @@ public class Transactions {
         }
 
 
-        productManagement();
+        warManSystemMenu();
     }
 
-    // 5- QUIT SYSTEM
+    // Q- QUIT SYSTEM
     private static void exitSystem() {
         System.out.println("******** HAVE A NICE DAY ********");
     }
 
-    // 4- SHELF PLANNING
+    // 5- Shelf Planning
     private static void shelfPlanning() {
         String newShelfNo = "";
         System.out.println("*****  SHELF PLANNING PAGE ****** ");
@@ -125,42 +134,14 @@ public class Transactions {
         warManSystemMenu();
     }
 
-    // 2- PRODUCT MANAGEMENT PAGE
-    private static void productManagement() {
-        System.out.println("*****  PRODUCT MANAGEMENT PAGE ****** ");
-        System.out.println("-------------------------");
-        System.out.println("1 - Add New Product\t\t3 - Remove Product");
-        System.out.println("2 - Update Product \t\t4 - List Products");
-        System.out.println("5 - Main Menu");
-        System.out.print("Chose your selection : ");
-        selection = scan.next();
 
-        switch (selection) {
-            case "1":
-                addNewProduct();
-                break;
-            case "2":
-                updateProduct();
-                break;
-            case "3":
-                removeProduct();
-                break;
-            case "4":
-                listProducts();
-                break;
-            case "5":
-                warManSystemMenu();
-                break;
-            default:
-        }
-    }
 
-    // 2-3 PRODUCT MANAGEMENT - Remove Product
+    // 3- Remove Product
     private static void removeProduct() {
         System.out.println("*****  PRODUCT UPDATE PAGE ****** ");
         System.out.println("-------------------------");
 
-        int returnedProductCode = ExceptionManagement.selectProductCode(); // write code number of the registered product
+        int returnedProductCode = ExceptionManagement.selectProductCode(); // Exception : Get Product Code
 
         Product prdTemp = addedProductsMap.get(returnedProductCode);
         System.out.println("Product Code : " + returnedProductCode + " - Product Quantity : " + prdTemp.getProductQuantity());
@@ -168,55 +149,54 @@ public class Transactions {
         addedProductsMap.remove(returnedProductCode);
         System.out.println(returnedProductCode + " Product has been removed from system");
 
-        listProducts();
+        selectionMethod();
 
     }
 
-    // 2-2 PRODUCT MANAGEMENT - Update Product
+    // 2- Update Product
     private static void updateProduct() {
         System.out.println("*****  PRODUCT UPDATE PAGE ****** ");
         System.out.println("-------------------------");
 
-        int returnedProductCode = ExceptionManagement.selectProductCode(); // write code number of the registered product
+        int returnedProductCode = ExceptionManagement.selectProductCode(); // Exception : Get Product Code
 
         Product prdTemp = addedProductsMap.get(returnedProductCode);
 
         System.out.println("Product Code : " + returnedProductCode + " - Product Quantity : " + prdTemp.getProductQuantity());
-        int returnedProductQuantity = ExceptionManagement.addQuantityProduct(); // write product quantity to be updated
+        int returnedProductQuantity = ExceptionManagement.addQuantityProduct(); // Exception : Get Quantity
 
         prdTemp.setProductQuantity(returnedProductQuantity);
 
         addedProductsMap.put(returnedProductCode, prdTemp);
 
-        listProducts();
+        selectionMethod();
 
     }
 
-    // 3 | 2-4 LIST PRODUCTS
+    // 4- List Products
     private static void listProducts() {
-        System.out.println("Prd ID  Prd Name  Prd Producer  Prd Unit  Prd Quantity  Prd ShelfNo");
-        System.out.println("-------------------------------------------------------------------");
+        System.out.printf("%-6s %-20.20s %-20.20s %-15.15s %-8s %-8s\n","Prd ID", "Prd Name","Prd Producer","Prd Unit","Qty","ShelfNo");
+        System.out.println("---------------------------------------------------------------------------------------");
 
         Set<Map.Entry<Integer, Product>> productEntrySet = addedProductsMap.entrySet();
 
         for (Map.Entry<Integer, Product> each : productEntrySet
         ) {
-            System.out.printf("%-6d %-10s %-12s %-10s %-8d %-8s \n", each.getKey(), each.getValue().getProductName(), each.getValue().getProductProducer(),
+            System.out.printf("%-6d %-20.20s %-20.20s %-15.15s %-8d %-8s \n", each.getKey(), each.getValue().getProductName(), each.getValue().getProductProducer(),
                     each.getValue().getProductUnit(), each.getValue().getProductQuantity(), each.getValue().getProductShelfNo());
         }
-        System.out.println("-------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------------");
 
-        productManagement();
+        selectionMethod();
 
     }
 
-    // 2-1 PRODUCT MANAGEMENT - ADD NEW PRODUCT
+    // 1- Add New product
     private static void addNewProduct() {
-        System.out.println("*****  ADD NEW PRODUCT PAGE ****** ");
+        System.out.println("*****  ADD NEW PRODUCT PAGE *****");
         System.out.println("-------------------------");
 
-        int returnedNum = ExceptionManagement.pNumbers(); // how many products will you enter?
-        // Check exceptions
+        int returnedNum = ExceptionManagement.pNumbers(); // Exceptions: how many products will you enter?
 
         scan.nextLine(); // dummy scan
         int pId = 0;
@@ -229,27 +209,42 @@ public class Transactions {
 
             pId = Product.getProductId();
 
-            System.out.print(i + 1 + ". Product Name : ");
+            System.out.print("("+(i + 1) + "/"+returnedNum+") Product Name : ");
             pName = scan.nextLine();
             prdTemp.setProductName(pName);
 
-            System.out.print("Product Producer : ");
+            System.out.print("("+(i + 1) + "/"+returnedNum+") Product Producer : ");
             pProducer = scan.nextLine();
             prdTemp.setProductProducer(pProducer);
 
-            System.out.print("Product Unit : ");
+            System.out.print("("+(i + 1) + "/"+returnedNum+") Product Unit : ");
             pUnit = scan.nextLine();
             prdTemp.setProductUnit(pUnit);
 
 
             addedProductsMap.put(pId, prdTemp);
 
-
+            System.out.println("----------------------");
         }
         System.out.println("All products have been added into the WarManSystem");
 
-        listProducts();
+        selectionMethod();
 
+    }
+
+    private static void selectionMethod() {
+        int selectionMethod = ExceptionManagement.selectionMethodControl();
+        switch (selectionMethod) {
+            case 1:
+                warManSystemMenu();
+                break;
+            case 2:
+                exitSystem();
+                break;
+            default:
+                selectionMethod();
+                break;
+        }
     }
 
 }
