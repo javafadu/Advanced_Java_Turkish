@@ -1,6 +1,6 @@
 package _15_ExceptionsFaDu.Q02;
 
-import _15_Exceptions.Q02.Ogrenci;
+
 
 import java.util.ArrayList;
 import java.util.List;
