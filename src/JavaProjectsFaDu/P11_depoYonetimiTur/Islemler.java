@@ -22,7 +22,6 @@ public class Islemler {
         System.out.println("                           Q - Quit");
         System.out.print("Seciminizi Yapiniz -> : ");
         secim = scan.next().toUpperCase();
-
         switch (secim) {
 
             case "1":
@@ -40,6 +39,7 @@ public class Islemler {
             case "4":
                 urunListele();
                 break;
+
 
             case "5":
                 rafPlanla();
@@ -67,7 +67,7 @@ public class Islemler {
         System.out.println("-------------------------");
 
         int gelenUrunKodu = HataKontrol.urunKoduSec(); // urun kodu girisi yap ve kontrol et
-        int gelenUrunMiktari = HataKontrol.urunMiktarGir(); // urun miktar bilgisi gir ve kontrol et
+        int gelenUrunMiktari = HataKontrol.urunCikisMiktarKontrol(gelenUrunKodu); // urun miktar bilgisi gir ve kontrol et
 
         Urunler urunObje = Urunler.eklnenUrunlerMap.get(gelenUrunKodu);
 

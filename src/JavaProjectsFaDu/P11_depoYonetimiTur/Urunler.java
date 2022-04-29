@@ -23,14 +23,14 @@ public class Urunler {
 
     }
 
-    public Urunler(int productId, String urunAdi, String urunUretici, int urunMiktar, String urunBirim, String urunRafNo) {
-        this.urunId = idCounter++;
-        this.urunAdi = urunAdi;
-        this.urunUretici = urunUretici;
-        this.urunMiktar = urunMiktar;
-        this.urunBirim = urunBirim;
-        this.urunRafNo = urunRafNo;
-    }
+//   public Urunler(int productId, String urunAdi, String urunUretici, int urunMiktar, String urunBirim, String urunRafNo) {
+//       //this.urunId = idCounter++;
+//       this.urunAdi = urunAdi;
+//       this.urunUretici = urunUretici;
+//       this.urunMiktar = urunMiktar;
+//       this.urunBirim = urunBirim;
+//       this.urunRafNo = urunRafNo;
+//   }
 
     public Urunler(String urunAdi, String urunUretici, String urunBirim) {
         this.urunAdi = getUrunAdi();

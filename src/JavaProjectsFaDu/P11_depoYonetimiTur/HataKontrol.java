@@ -1,6 +1,7 @@
 package JavaProjectsFaDu.P11_depoYonetimiTur;
 
 
+import static JavaProjectsFaDu.P11_depoYonetimiTur.Islemler.depoYonetimSistemi;
 import static JavaProjectsFaDu.P11_depoYonetimiTur.Islemler.scan;
 
 public class HataKontrol {
@@ -160,4 +161,40 @@ public class HataKontrol {
         return tempNum;
     }
 
+    public static int urunCikisMiktarKontrol(int gelenUrunKodu) {
+        int tempNum = 0;
+        int sayac=0;
+
+        while (true) {
+            try {
+                System.out.print("Lutfen urun miktariniz giriniz: ");
+                tempNum = Integer.valueOf(scan.next());
+                // Urunler obje= Urunler.eklnenUrunlerMap.get(gelenUrunKodu);
+
+                if (tempNum > Urunler.eklnenUrunlerMap.get(gelenUrunKodu).getUrunMiktar()) {
+                    throw new IllegalArgumentException();
+                } else {
+                    break;
+                }
+
+            } catch (IllegalArgumentException e) {
+                System.out.println("UYARI ! : Girilen miktar rafdakinden fazladir");
+                sayac++;
+
+            } catch (Exception e) {
+                System.out.println("UYARI ! Lutfen sayisal bir veri giriniz");
+                sayac++;
+
+            }
+
+            if(sayac==3) {
+                System.out.println("3 kere hatali giris yaptiniz");
+                depoYonetimSistemi();
+
+            }
+        }
+
+        return tempNum;
+
+    }
 }
