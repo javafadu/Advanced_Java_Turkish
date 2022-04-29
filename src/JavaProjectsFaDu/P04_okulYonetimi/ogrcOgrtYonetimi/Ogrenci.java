@@ -40,6 +40,9 @@ public class Ogrenci extends Kisi {
         this.sinif = sinif;
     }
 
+
+
+
     // toString
 
 

@@ -1,11 +1,7 @@
-package JavaProjectsFaDu.P11_depoYonetimi;
+package JavaProjectsFaDu.P11_depoYonetimiEng;
 
-import _15_ExceptionsFaDu.Q02.Student;
-
-import java.util.Scanner;
-
-import static JavaProjectsFaDu.P11_depoYonetimi.Transactions.addedProductsMap;
-import static JavaProjectsFaDu.P11_depoYonetimi.Transactions.scan;
+import static JavaProjectsFaDu.P11_depoYonetimiEng.Transactions.addedProductsMap;
+import static JavaProjectsFaDu.P11_depoYonetimiEng.Transactions.scan;
 
 public class ExceptionManagement {
 

@@ -1,6 +1,4 @@
-package JavaProjectsFaDu.P11_depoYonetimi;
-
-import JavaProjectsFaDu.P05_HalukMarket.Products;
+package JavaProjectsFaDu.P11_depoYonetimiEng;
 
 import java.util.HashMap;
 import java.util.Map;

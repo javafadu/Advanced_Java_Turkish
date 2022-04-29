@@ -1,4 +1,4 @@
-package JavaProjectsFaDu.P11_depoYonetimi;
+package JavaProjectsFaDu.P11_depoYonetimiEng;
 
 public class MainRunner {
     public static void main(String[] args) {
